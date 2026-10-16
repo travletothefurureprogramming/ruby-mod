@@ -1,5 +1,6 @@
 {
   "item.rubymod.ruby": "Ruby",
   "item.rubymod.ruby_pickaxe": "Ruby Pickaxe",
-  "block.rubymod.ruby_ore": "Ruby Ore"
+  "block.rubymod.ruby_ore": "Ruby Ore",
+  "itemgroup.rubymod.ruby_group": "Ruby Mod"
 }
