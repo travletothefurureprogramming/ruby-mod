@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "rubymod",
+	"version": "${version}",
+	"name": "Ruby Mod",
+	"description": "A custom Minecraft mod adding rubies, ruby tools, and ore generation!",
+	"authors": [
+		"Greg_ios"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/rubymod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.example.rubymod.RubyMod"
+		],
+		"client": [
+			"com.example.rubymod.client.RubyModClient"
+		],
+		"fabric-datagen": [
+			"com.example.rubymod.client.RubyModDataGenerator"
+		]
+	},
+	"mixins": [
+		"rubymod.mixins.json",
+		{
+			"config": "rubymod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
