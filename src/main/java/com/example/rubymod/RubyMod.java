@@ -17,6 +17,12 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.HoeItem;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.world.gen.GenerationStep;
 
 public class RubyMod implements ModInitializer {
     public static final String MOD_ID = "rubymod";
@@ -31,6 +37,11 @@ public class RubyMod implements ModInitializer {
     public static final Item RUBY_AXE = new AxeItem(RubyToolMaterial.INSTANCE, 6.0f, -3.0f, new Item.Settings());
     public static final Item RUBY_SHOVEL = new ShovelItem(RubyToolMaterial.INSTANCE, 1.5f, -3.0f, new Item.Settings());
     public static final Item RUBY_HOE = new HoeItem(RubyToolMaterial.INSTANCE, -2, -0.0f, new Item.Settings());
+
+    public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = RegistryKey.of(
+        RegistryKeys.PLACED_FEATURE, 
+        new Identifier(MOD_ID, "ruby_ore_placed")
+    );
 
     public static final ItemGroup RUBY_GROUP = Registry.register(
         Registries.ITEM_GROUP,
@@ -66,6 +77,12 @@ public class RubyMod implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_axe"), RUBY_AXE);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_shovel"), RUBY_SHOVEL);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_hoe"), RUBY_HOE);
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            RUBY_ORE_PLACED_KEY
+        );
         
     }
 }
