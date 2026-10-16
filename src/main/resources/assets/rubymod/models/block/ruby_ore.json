@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "rubymod:block/ruby_ore"
+    "down": "rubymod:block/ruby_ore",
+    "up": "rubymod:block/ruby_ore",
+    "north": "rubymod:block/ruby_ore",
+    "south": "rubymod:block/ruby_ore",
+    "east": "rubymod:block/ruby_ore",
+    "west": "rubymod:block/ruby_ore",
+    "particle": "rubymod:block/ruby_ore"
   }
 }
