@@ -8,10 +8,10 @@
 		"Greg_ios"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/travletothefurureprogramming/",
+		"sources": "https://github.com/travletothefurureprogramming/ruby-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/rubymod/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -20,9 +20,6 @@
 		],
 		"client": [
 			"com.example.rubymod.client.RubyModClient"
-		],
-		"fabric-datagen": [
-			"com.example.rubymod.client.RubyModDataGenerator"
 		]
 	},
 	"mixins": [
