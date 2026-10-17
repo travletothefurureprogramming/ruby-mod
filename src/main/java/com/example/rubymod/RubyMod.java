@@ -1,5 +1,5 @@
 package com.example.rubymod;
-
+import net.minecraft.world.gen.feature.PlacedFeature;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.AbstractBlock;
