@@ -1,28 +1,21 @@
 package com.example.rubymod;
-import net.minecraft.world.gen.feature.PlacedFeature;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.HoeItem;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class RubyMod implements ModInitializer {
     public static final String MOD_ID = "rubymod";
@@ -38,6 +31,11 @@ public class RubyMod implements ModInitializer {
     public static final Item RUBY_SHOVEL = new ShovelItem(RubyToolMaterial.INSTANCE, 1.5f, -3.0f, new Item.Settings());
     public static final Item RUBY_HOE = new HoeItem(RubyToolMaterial.INSTANCE, -2, -0.0f, new Item.Settings());
 
+    public static final Item RUBY_HELMET = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings());
+    public static final Item RUBY_CHESTPLATE = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings());
+    public static final Item RUBY_LEGGINGS = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings());
+    public static final Item RUBY_BOOTS = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings());
+
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = RegistryKey.of(
         RegistryKeys.PLACED_FEATURE, 
         new Identifier(MOD_ID, "ruby_ore_placed")
@@ -52,12 +50,16 @@ public class RubyMod implements ModInitializer {
             .entries((displayContext, entries) -> {
                 entries.add(RUBY_GEM);
                 entries.add(RUBY_ORE);
-                entries.add(RUBY_PICKAXE);
                 entries.add(RUBY_BLOCK);
+                entries.add(RUBY_PICKAXE);
                 entries.add(RUBY_SWORD);
                 entries.add(RUBY_AXE);
                 entries.add(RUBY_SHOVEL);
                 entries.add(RUBY_HOE);
+                entries.add(RUBY_HELMET);
+                entries.add(RUBY_CHESTPLATE);
+                entries.add(RUBY_LEGGINGS);
+                entries.add(RUBY_BOOTS);
             })
             .build()
     );
@@ -78,11 +80,16 @@ public class RubyMod implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_shovel"), RUBY_SHOVEL);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_hoe"), RUBY_HOE);
 
+        // Registration για τα 4 κομμάτια της πανοπλίας
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_helmet"), RUBY_HELMET);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), RUBY_CHESTPLATE);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_leggings"), RUBY_LEGGINGS);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_boots"), RUBY_BOOTS);
+
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES,
             RUBY_ORE_PLACED_KEY
         );
-        
     }
 }
