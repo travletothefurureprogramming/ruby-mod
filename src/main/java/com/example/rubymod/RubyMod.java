@@ -80,11 +80,7 @@ public class RubyMod implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_shovel"), RUBY_SHOVEL);
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_hoe"), RUBY_HOE);
 
-        // Registration για τα 4 κομμάτια της πανοπλίας
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_helmet"), RUBY_HELMET);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_chestplate"), RUBY_CHESTPLATE);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_leggings"), RUBY_LEGGINGS);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "ruby_boots"), RUBY_BOOTS);
+
 
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
