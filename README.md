@@ -40,6 +40,9 @@ This allows the mod to be launched in a Minecraft development client for testing
 
 Ruby Mod is currently under development. More features, improvements, and testing may be added in future updates.
 
+# License
+This project is licensed under the [CC0-1.0] License - see the LICENSE.md file for details
+
 ## Credits
 
 Created by **Greg_ios**.
