@@ -31,10 +31,6 @@ public class RubyMod implements ModInitializer {
     public static final Item RUBY_SHOVEL = new ShovelItem(RubyToolMaterial.INSTANCE, 1.5f, -3.0f, new Item.Settings());
     public static final Item RUBY_HOE = new HoeItem(RubyToolMaterial.INSTANCE, -2, -0.0f, new Item.Settings());
 
-    public static final Item RUBY_HELMET = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings());
-    public static final Item RUBY_CHESTPLATE = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings());
-    public static final Item RUBY_LEGGINGS = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings());
-    public static final Item RUBY_BOOTS = new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings());
 
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = RegistryKey.of(
         RegistryKeys.PLACED_FEATURE, 
@@ -56,10 +52,6 @@ public class RubyMod implements ModInitializer {
                 entries.add(RUBY_AXE);
                 entries.add(RUBY_SHOVEL);
                 entries.add(RUBY_HOE);
-                entries.add(RUBY_HELMET);
-                entries.add(RUBY_CHESTPLATE);
-                entries.add(RUBY_LEGGINGS);
-                entries.add(RUBY_BOOTS);
             })
             .build()
     );
