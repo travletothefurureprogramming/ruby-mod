@@ -1,5 +1,7 @@
 # Ruby Mod
 
+![Screenshot](images/screenshot1.png)
+
 Ruby Mod is a Minecraft mod that adds a new ruby-based material and a complete set of ruby equipment to the game. The goal of this project is to expand the vanilla Minecraft experience with new items, useful tools, and custom textures while keeping everything simple and consistent with the original game's style.
 
 ## Features
